@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>Bem-vindo ao FitMais</title>
+    <!--[if gte mso 9]>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+    <style type="text/css">
+        /* Reset & Client-specific Estilos */
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+            background-color: #0d0d0d;
+            font-family: Arial, Helvetica, Verdana, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        table, td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+            border-collapse: collapse !important;
+        }
+        img {
+            -ms-interpolation-mode: bicubic;
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        
+        /* Efeitos e Animações modernas (suportadas por clientes modernos como Apple Mail e Gmail Web) */
+        .cta-button {
+            transition: all 0.3s ease !important;
+            background: linear-gradient(135deg, #FF7B1A 0%, #FF5500 100%) !important;
+            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.35) !important;
+        }
+        .cta-button:hover {
+            background: linear-gradient(135deg, #FF8F3D 0%, #FF6B00 100%) !important;
+            box-shadow: 0 6px 20px rgba(255, 107, 0, 0.55) !important;
+            transform: translateY(-2px);
+        }
+        
+        .feature-item {
+            transition: background-color 0.2s ease;
+        }
+        .feature-item:hover {
+            background-color: #1f1a16 !important;
+        }
+
+        /* Responsividade para Dispositivos Móveis */
+        @media only screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .content-padding {
+                padding-left: 24px !important;
+                padding-right: 24px !important;
+            }
+            .header-padding {
+                padding-top: 32px !important;
+                padding-bottom: 24px !important;
+            }
+            .title-text {
+                font-size: 26px !important;
+                line-height: 32px !important;
+            }
+            .cta-button-td {
+                width: 100% !important;
+            }
+            .cta-button-link {
+                display: block !important;
+                width: 100% !important;
+                text-align: center !important;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #0d0d0d; color: #e5e5e5; font-family: Arial, Helvetica, Verdana, sans-serif;">
+
+    <!-- Preheader Oculto para Preview nos Clientes de E-mail -->
+    <div style="display: none; max-height: 0px; overflow: hidden; font-size: 1px; line-height: 1px; color: #0d0d0d; opacity: 0;">
+        Sua conta FitMais foi criada com sucesso! Prepare-se para montar suas dietas, acompanhar seu progresso e alcançar seus objetivos.
+    </div>
+
+    <!-- Tabela Principal de Fundo (Degradê escuro sofisticado) -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #0d0d0d; background-image: radial-gradient(circle at 50% 0%, #2a1506 0%, #0d0d0d 60%); min-height: 100vh;">
+        <tr>
+            <td align="center" style="padding: 40px 15px;">
+                
+                <!-- Container Central do Card (Max 600px) -->
+                <!--[if (gte mso 9)|(IE)]>
+                <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+                <tr>
+                <td align="center" valign="top" width="600">
+                <![endif]-->
+                <table class="email-container" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; margin: 0 auto;">
+                    
+                    <!-- CABEÇALHO COM LOGO FITMAIS -->
+                    <tr>
+                        <td align="center" class="header-padding" style="padding: 20px 0 30px 0;">
+                            <table border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td align="center" style="font-family: 'Arial Black', Arial, sans-serif; font-size: 28px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;">
+                                        <span style="color: #FFFFFF;">FIT</span><span style="color: #FF6B00;">MAIS</span>
+                                        <div style="height: 3px; width: 36px; background-color: #FF6B00; margin: 6px auto 0 auto; border-radius: 2px;"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- CARD PRINCIPAL DE CONTEÚDO -->
+                    <tr>
+                        <td style="background-color: #141414; border: 1px solid #281c12; border-radius: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 40px rgba(255, 107, 0, 0.08); overflow: hidden;">
+                            
+                            <!-- Barra de Destaque Superior Laranja -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td height="4" style="background: linear-gradient(90deg, #FF6B00 0%, #FF9900 50%, #FF6B00 100%); background-color: #FF6B00; font-size: 0; line-height: 0;">&nbsp;</td>
+                                </tr>
+                            </table>
+
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <!-- ÍCONE FITNESS ILUSTRATIVO (HALTER / PERFORMANCE) -->
+                                <tr>
+                                    <td align="center" style="padding-top: 42px; padding-bottom: 20px;">
+                                        <!-- Ícone SVG embutido em um círculo estilizado com glow -->
+                                        <div style="width: 80px; height: 80px; border-radius: 50%; background: radial-gradient(circle, rgba(255,107,0,0.2) 0%, rgba(255,107,0,0.05) 70%, transparent 100%); border: 1px solid rgba(255,107,0,0.3); display: inline-block; text-align: center; line-height: 80px;">
+                                            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle; margin-top: 19px;">
+                                                <!-- Halter moderno / Símbolo de Academia -->
+                                                <path d="M6.5 6.5C7.32843 6.5 8 7.17157 8 8V16C8 16.8284 7.32843 17.5 6.5 17.5C5.67157 17.5 5 16.8284 5 16V8C5 7.17157 5.67157 6.5 6.5 6.5Z" fill="#FF6B00"/>
+                                                <path d="M17.5 6.5C18.3284 6.5 19 7.17157 19 8V16C19 16.8284 18.3284 17.5 17.5 17.5C16.6716 17.5 16 16.8284 16 16V8C16 7.17157 16.6716 6.5 17.5 6.5Z" fill="#FF6B00"/>
+                                                <path d="M3.5 8.5C4.32843 8.5 5 9.17157 5 10V14C5 14.8284 4.32843 15.5 3.5 15.5C2.67157 15.5 2 14.8284 2 14V10C2 9.17157 2.67157 8.5 3.5 8.5Z" fill="#FF8C33"/>
+                                                <path d="M20.5 8.5C21.3284 8.5 22 9.17157 22 10V14C22 14.8284 21.3284 15.5 20.5 15.5C19.6716 15.5 19 14.8284 19 14V10C19 9.17157 19.6716 8.5 20.5 8.5Z" fill="#FF8C33"/>
+                                                <path d="M8 11H16V13H8V11Z" fill="#FFFFFF"/>
+                                                <!-- Detalhe de energia / Pulso no centro -->
+                                                <circle cx="12" cy="12" r="2.5" fill="#FF6B00"/>
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <!-- TÍTULO DE BOAS-VINDAS -->
+                                <tr>
+                                    <td align="center" class="content-padding" style="padding: 0 40px 12px 40px;">
+                                        <h1 class="title-text" style="margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 30px; font-weight: 800; color: #FFFFFF; letter-spacing: -0.5px; line-height: 38px;">
+                                            Bem-vindo ao <span style="color: #FF6B00;">FitMais</span>!
+                                        </h1>
+                                    </td>
+                                </tr>
+
+                                <!-- SAUDAÇÃO COM VARIÁVEL THYMELEAF -->
+                                <tr>
+                                    <td align="center" class="content-padding" style="padding: 0 40px 16px 40px;">
+                                        <p style="margin: 0; font-size: 18px; line-height: 26px; color: #CCCCCC; font-weight: 600;">
+                                            Olá, <span th:text="${nome}" style="color: #FFFFFF; font-weight: 700;">Atleta</span>! &#128075;
+                                        </p>
+                                    </td>
+                                </tr>
+
+                                <!-- TEXTO DE EXPLICAÇÃO / SUCESSO DA CONTA -->
+                                <tr>
+                                    <td align="center" class="content-padding" style="padding: 0 40px 32px 40px;">
+                                        <p style="margin: 0; font-size: 15px; line-height: 24px; color: #A0A0A0; max-width: 460px;">
+                                            Sua conta foi criada com sucesso! Estamos empolgados em fazer parte da sua evolução. O <strong style="color: #E5E5E5;">FitMais</strong> foi pensado para ser seu parceiro definitivo de alta performance, unindo tecnologia e foco nos seus resultados.
+                                        </p>
+                                    </td>
+                                </tr>
+
+                                <!-- DIVISOR SUTIL -->
+                                <tr>
+                                    <td class="content-padding" style="padding: 0 40px;">
+                                        <div style="height: 1px; width: 100%; background: linear-gradient(90deg, rgba(255,255,255,0.03) 0%, rgba(255,107,0,0.3) 50%, rgba(255,255,255,0.03) 100%);"></div>
+                                    </td>
+                                </tr>
+
+                                <!-- SEÇÃO DE BENEFÍCIOS / RECURSOS -->
+                                <tr>
+                                    <td class="content-padding" style="padding: 32px 40px 15px 40px;">
+                                        <p style="margin: 0 0 18px 0; font-size: 12px; font-weight: 700; color: #FF6B00; text-transform: uppercase; letter-spacing: 1.5px; text-align: center;">
+                                            O que você já pode fazer agora:
+                                        </p>
+
+                                        <!-- LISTA DE BENEFÍCIOS COM ÍCONES ✔ -->
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #1A1715; border-radius: 12px; border: 1px solid #2B221A;">
+                                            <!-- Item 1: Monte suas dietas -->
+                                            <tr>
+                                                <td class="feature-item" style="padding: 14px 18px; border-bottom: 1px solid #241C15;">
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                        <tr>
+                                                            <td width="30" valign="middle">
+                                                                <div style="width: 22px; height: 22px; border-radius: 50%; background-color: rgba(255, 107, 0, 0.15); border: 1px solid #FF6B00; text-align: center; line-height: 22px; font-size: 12px; color: #FF6B00; font-weight: bold;">
+                                                                    &#10004;
+                                                                </div>
+                                                            </td>
+                                                            <td style="font-size: 15px; font-weight: 600; color: #EAEAEA; padding-left: 10px;">
+                                                                Monte suas dietas
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Item 2: Acompanhe seu progresso -->
+                                            <tr>
+                                                <td class="feature-item" style="padding: 14px 18px; border-bottom: 1px solid #241C15;">
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                        <tr>
+                                                            <td width="30" valign="middle">
+                                                                <div style="width: 22px; height: 22px; border-radius: 50%; background-color: rgba(255, 107, 0, 0.15); border: 1px solid #FF6B00; text-align: center; line-height: 22px; font-size: 12px; color: #FF6B00; font-weight: bold;">
+                                                                    &#10004;
+                                                                </div>
+                                                            </td>
+                                                            <td style="font-size: 15px; font-weight: 600; color: #EAEAEA; padding-left: 10px;">
+                                                                Acompanhe seu progresso
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Item 3: Organize seus treinos -->
+                                            <tr>
+                                                <td class="feature-item" style="padding: 14px 18px; border-bottom: 1px solid #241C15;">
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                        <tr>
+                                                            <td width="30" valign="middle">
+                                                                <div style="width: 22px; height: 22px; border-radius: 50%; background-color: rgba(255, 107, 0, 0.15); border: 1px solid #FF6B00; text-align: center; line-height: 22px; font-size: 12px; color: #FF6B00; font-weight: bold;">
+                                                                    &#10004;
+                                                                </div>
+                                                            </td>
+                                                            <td style="font-size: 15px; font-weight: 600; color: #EAEAEA; padding-left: 10px;">
+                                                                Organize seus treinos
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Item 4: Alcance seus objetivos -->
+                                            <tr>
+                                                <td class="feature-item" style="padding: 14px 18px;">
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                        <tr>
+                                                            <td width="30" valign="middle">
+                                                                <div style="width: 22px; height: 22px; border-radius: 50%; background-color: rgba(255, 107, 0, 0.15); border: 1px solid #FF6B00; text-align: center; line-height: 22px; font-size: 12px; color: #FF6B00; font-weight: bold;">
+                                                                    &#10004;
+                                                                </div>
+                                                            </td>
+                                                            <td style="font-size: 15px; font-weight: 600; color: #EAEAEA; padding-left: 10px;">
+                                                                Alcance seus objetivos
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <!-- BOTÃO PRINCIPAL DE ACESSO (COMEÇAR AGORA) -->
+                                <tr>
+                                    <td align="center" class="content-padding" style="padding: 35px 40px 45px 40px;">
+                                        <table border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td align="center" bgcolor="#FF6B00" class="cta-button" style="border-radius: 10px; background-color: #FF6B00;">
+                                                    <a th:href="${url}" href="#" target="_blank" class="cta-button-link" style="display: inline-block; padding: 18px 42px; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; color: #FFFFFF; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; border-radius: 10px;">
+                                                        Começar Agora
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <!-- Subtexto discreto do botão -->
+                                        <p style="margin: 14px 0 0 0; font-size: 12px; color: #777777;">
+                                            Pronto para superar seus limites hoje?
+                                        </p>
+                                    </td>
+                                </tr>
+
+                                <!-- RODAPÉ INTERNO DO CARD -->
+                                <tr>
+                                    <td style="background-color: #1A1715; padding: 20px 40px; border-top: 1px solid #281C13;">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td align="center" style="font-size: 13px; color: #999999; line-height: 20px;">
+                                                    <span style="color: #FF6B00; font-weight: 700;">Dica FitMais:</span> Mantenha a consistência diária. Pequenos avanços geram transformações lendárias.
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- RODAPÉ EXTERNO COM INFORMAÇÕES DE DIREITOS E AUTOMAÇÃO -->
+                    <tr>
+                        <td align="center" class="content-padding" style="padding: 30px 20px 40px 20px;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td align="center" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #FFFFFF; padding-bottom: 8px;">
+                                        Equipe FitMais
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #888888; padding-bottom: 6px; line-height: 18px;">
+                                        Este é um e-mail automático. Por favor, não responda a esta mensagem.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #666666; line-height: 18px;">
+                                        Copyright &copy; 2026 FitMais. Todos os direitos reservados.
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+                <!--[if (gte mso 9)|(IE)]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
