@@ -23,6 +23,9 @@ public class UsuarioRegistradoConsumer {
 
     @RabbitListener(queues = RabbitMQConfig.QUEUE)
     public void receber(UsuarioRegistradoEvent event) {
+
+        // throw new RuntimeException("Erro de teste");
+
         log.info("Evento recebido da fila '{}': usuarioId={}, username='{}', email='{}', registradoEm={}",
                 RabbitMQConfig.QUEUE, event.usuarioId(), event.username(), event.email(), event.registradoEm());
 
