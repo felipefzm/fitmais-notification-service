@@ -1,10 +1,5 @@
 package br.com.fitmais_notification.config;
 
-import org.springframework.amqp.core.Binding;
-import org.springframework.amqp.core.BindingBuilder;
-import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.core.QueueBuilder;
-import org.springframework.amqp.core.TopicExchange;
 import org.springframework.amqp.rabbit.config.RetryInterceptorBuilder;
 import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
@@ -19,34 +14,8 @@ import org.springframework.retry.interceptor.RetryOperationsInterceptor;
 @Configuration
 public class RabbitMQConfig {
 
-    public static final String EXCHANGE = "usuario.exchange";
     public static final String QUEUE = "usuario.criado.queue";
-    public static final String ROUTING_KEY = "usuario.criado";
     public static final String DLQ = "usuario.criado.dlq";
-
-    @Bean
-    public TopicExchange exchange() {
-        return new TopicExchange(EXCHANGE);
-    }
-
-    // Aponta pra DLQ usando a exchange padrão (""), que roteia pela routing key = nome da fila de destino.
-    @Bean
-    public Queue queue() {
-        return QueueBuilder.durable(QUEUE)
-                .withArgument("x-dead-letter-exchange", "")
-                .withArgument("x-dead-letter-routing-key", DLQ)
-                .build();
-    }
-
-    @Bean
-    public Binding binding() {
-        return BindingBuilder.bind(queue()).to(exchange()).with(ROUTING_KEY);
-    }
-
-    @Bean
-    public Queue dlq() {
-        return QueueBuilder.durable(DLQ).build();
-    }
 
     @Bean
     public MessageConverter messageConverter() {
@@ -75,6 +44,9 @@ public class RabbitMQConfig {
         factory.setConnectionFactory(connectionFactory);
         factory.setMessageConverter(messageConverter);
         factory.setAdviceChain(retryOperationsInterceptor);
+        // A api pode declarar a fila depois deste serviço subir (ordem não garantida no
+        // docker-compose); sem isso o container do listener falharia ao não achá-la de imediato.
+        factory.setMissingQueuesFatal(false);
         return factory;
     }
 }
